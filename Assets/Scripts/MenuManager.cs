@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     public Text cuentaAtrasTextos;
     
@@ -18,15 +18,18 @@ public class SceneManager : MonoBehaviour
             {
                 if(hit.transform.tag == "cubo 1")
                 {
-                    StartCoroutine("CuentaAtras");
+                    //StartCoroutine("CuentaAtras");
+                    SceneManager.LoadScene("Scene1 1");
                 }
                 else if(hit.transform.tag == "cubo 2")
                 {
-                    StartCoroutine("CuentaAtras");
+                    //StartCoroutine("CuentaAtras");
+                    SceneManager.LoadScene("Scene1 3");
                 }
                 else if(hit.transform.tag == "esfera")
                 {
-                    StartCoroutine("CuentaAtras");
+                    //StartCoroutine("CuentaAtras");
+                    SceneManager.LoadScene("Scene1 2");
                 }
             }
         }
@@ -46,11 +49,6 @@ public class SceneManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         cuentaAtrasTextos.text = "0";
         yield return new WaitForSeconds(1);
-    }
-
-    public static void LoadScene()
-    {
-        //SceneManager.LoadScene("Scene1 3",);
     }
 }
 
